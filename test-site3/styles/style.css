@@ -3,10 +3,10 @@ body{
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.125rem;
     font-weight: 300;
-    margin:0;
+    max-width: 100%;
 }
 
-img{
+.container-flex img{
     max-width: 100%;
     display: block;
 }
@@ -15,7 +15,7 @@ img{
 Layout
 =========== */
 
-.container{
+div .container{
     width: 900px;
     max-width: 900px;
     margin: 0 auto;
@@ -24,16 +24,82 @@ Layout
 .container-flex{
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 900px;
 }
 
 header{
     background-color: #f8f8f8;
-    padding: 10px auto;
     padding: 2em 0;
+    text-align: center;
 }
 
+@media(min-width: 675px){
+    .container-flex{
+        flex-direction: row;
+    }
+    main{
+        width: 75%;
+    }
+    aside{
+        width: 20%;
+    }
+    header{
+        text-align: unset;
+    }
+}
+/* ---------------- /
+      Navigation 
+/  --------------- */
 
+nav{
+    font-family: 'Ubuntu', sans-serif;
+    color: #707070;
+}
 
+nav ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li{
+    margin-left: 2em;
+}
+
+nav a{
+    text-decoration: none;
+    color: #707070;
+    font-weight: 700;
+    padding: .25em 0;
+}
+
+nav a:hover,
+nav a:focus{
+    color: #1792d2;
+}
+
+.current-page{
+    border-bottom: 1px solid #707070;
+}
+
+.current-page{
+    color: #707070;
+}
+
+@media (max-width: 675px){
+    nav ul{
+        flex-direction: column;
+    }
+    
+    nav li{
+        margin: 0 auto;
+        padding: 0.4rem;
+    }
+}
 /* ===========
 Typography 
 ============ */
@@ -82,6 +148,7 @@ h1{
 .article-info,
 .article-body{
     color: #707070;
+    text-align: justify;
 }
 
 .feature-bold{
@@ -103,42 +170,40 @@ h1{
 
 }
 
-/* ---------------- /
-      Navigation 
-/  --------------- */
-nav{
-    font-family: 'Ubuntu', sans-serif;
-    color: #707070;
+/* article */
+.article-featured{
+    border-bottom: #707070 2px solid;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
 }
 
-nav ul{
-    list-style: none;
-    padding: 0;
+.article-recent{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
-nav li{
-    margin-left: 2em;
+.article-recent-main{
+    order: 2;
 }
 
-nav a{
-    text-decoration: none;
-    color: #707070;
-    font-weight: 700;
-    padding: .25em 0;
+.article-recent-secondary{
+    order: 1;
 }
 
-nav a:hover,
-nav a:focus{
-    color: #1792d2;
-}
+@media(min-width:675px){
+    .article-recent{
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: stretch;
+    }
 
+    .article-recent-main{
+        width: 60%;
+        padding-left: 1em;
+    }
 
-.current-page{
-    border-bottom: 1px solid #707070;
-}
-
-.current-page{
-    color: #707070;
+    .article-recent-secondary{
+        width: 40%;
+        padding-top: 1.25em;
+    }
 }
