@@ -45,10 +45,26 @@ header{
     }
     aside{
         width: 20%;
+        min-width: 200px;
+        margin-left: 1em;
     }
     header{
         text-align: unset;
     }
+
+    .sidebar-widget{
+        border: 10px solid lightgray;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        padding: 0.5em;
+    }
+}
+
+footer{
+    background-color: #143774;
+    color: #f8f8f8;
+    padding: 3em 0;
+    text-align: center;
 }
 /* ---------------- /
       Navigation 
@@ -131,6 +147,7 @@ h1{
 .article-info{
     font-family: 'Ubuntu', sans-serif;
     font-size: 0.875rem;
+    margin-top: 5px;
 }
 
 .article-read-more{
@@ -170,7 +187,13 @@ h1{
 
 }
 
+.article-body,
+.widget-body{
+    text-align: justify;
+}
+
 /* article */
+
 .article-featured{
     border-bottom: #707070 2px solid;
     padding-bottom: 1em;
@@ -190,6 +213,8 @@ h1{
     order: 1;
 }
 
+
+
 @media(min-width:675px){
     .article-recent{
         justify-content: space-between;
@@ -206,4 +231,68 @@ h1{
         width: 40%;
         padding-top: 1.25em;
     }
+
+    .article-image{
+        width: 100%;
+        min-height: 250px;
+        object-fit: cover;
+    }
+}
+
+/* featured article */
+.article-featured{
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-article-image{
+    order:1;
+    margin-top: 30px;
+}
+
+.article-info{
+    order: 2;
+}
+
+.article-featured .article-title{
+    order: 3;
+    margin: 3px 0;
+}
+
+.article-featured .article-body{
+    order: 4;
+    margin-top: 3px; 
+}
+
+.article-read-more{
+    order: 5;
+}
+
+/* sidebar */
+
+
+.widget-recent-post{
+    display: flex;
+    flex-direction: column;
+}
+
+.recent-post-title{
+    order: 2;
+    margin-top: 0;
+}
+
+.widget-img{
+    order: 1;
+    margin-bottom: 0;
+}
+
+
+.widget-recent-post{
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 1rem;
+}
+
+.widget-recent-post:last-child{
+    border: 0;
+    margin: 0;
 }
